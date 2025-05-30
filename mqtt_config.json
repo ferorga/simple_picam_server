@@ -1,0 +1,6 @@
+{
+    "broker": "192.168.20.113",
+    "port": 1883,
+    "topic_prefix": "picam/controls",
+    "client_id": "picam_mqtt_server"
+}
