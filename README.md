@@ -16,7 +16,7 @@ Control camera settings remotely via MQTT messages.
 
 ## Requirements
 
-- Raspberry Pi with Pi Camera and `picamera2` library installed.
+- Raspberry Pi with Pi Camera and `picamera2` and `libcamera` library installed.
 - `ffmpeg`
 - MQTT broker (e.g., Mosquitto)
 - Python dependencies (`cv2`, `picamera2`, `paho-mqtt`, etc.)
@@ -33,7 +33,7 @@ Control camera settings remotely via MQTT messages.
   sudo apt install mosquitto
   sudo systemctl enable mosquitto
   sudo systemctl start mosquitto
-
+  ```
 
 ## Usage
 
@@ -43,14 +43,16 @@ Control camera settings remotely via MQTT messages.
 
    ```bash
    python3 main.py
-
+   ```
 
 ## Control parameters
 
    ```bash
    mosquitto_pub -h 192.168.20.113 -t "picam/controls/gain" -m "1"
+   ```
 
 ## Play Video
 
    ```bash
    ffplay -fflags nobuffer -flags low_delay -framedrop -strict experimental -f h264 tcp://192.168.20.113:8811
+   ```
